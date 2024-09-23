@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxcw2.">
+    <children>
+        <Pane layoutY="-5.0" prefHeight="599.0" prefWidth="934.0" style="-fx-background-color: #000437;">
+            <children>
+                <Button fx:id="exitBtn" alignment="BASELINE_CENTER" contentDisplay="RIGHT" graphicTextGap="10.0" layoutY="538.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="60.0" prefWidth="243.0" styleClass="buttonExit" stylesheets="@GUIcss.css" text="Exit" textFill="#D5B81B">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@exit.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="menu" alignment="BASELINE_CENTER" contentDisplay="RIGHT" graphicTextGap="10.0" layoutY="458.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="60.0" prefWidth="243.0" styleClass="buttonMenu" stylesheets="@GUIcss.css" text="Menu" textFill="#D5B81B">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@menu.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="198.0" fitWidth="243.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Rapid Run Logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <StackPane layoutX="243.0" prefHeight="594.0" prefWidth="691.0" style="-fx-background-color: #D5B81B;">
+            <children>
+                <Pane fx:id="addDetailsPane" prefHeight="594.0" prefWidth="699.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <TableView fx:id="addTable" layoutX="16.0" layoutY="254.0" prefHeight="325.0" prefWidth="667.0">
+                            <columns>
+                                <TableColumn fx:id="addHorseIDCol" prefWidth="71.20001220703125" text="HorseID" />
+                                <TableColumn fx:id="addHNameCol" prefWidth="117.5999755859375" text="HorseName" />
+                                <TableColumn fx:id="addJNameCol" prefWidth="110.4000244140625" text="JockeyName" />
+                                <TableColumn fx:id="addAgeCol" prefWidth="47.99993896484375" text="Age" />
+                                <TableColumn fx:id="addBreedCol" prefWidth="83.20001220703125" text="Breed" />
+                                <TableColumn fx:id="addRaceRecordCol" minWidth="0.0" prefWidth="91.199951171875" text="RaceRecord" />
+                                <TableColumn fx:id="addGroupCol" prefWidth="48.800048828125" text="Group" />
+                                <TableColumn fx:id="addHorsePicCol" prefWidth="98.4000244140625" text="HorsePicture" />
+                            </columns>
+                        </TableView>
+                  <Pane layoutX="13.0" layoutY="8.0" prefHeight="236.0" prefWidth="667.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                     <children>
+                        <Label fx:id="updateMsgLabel1" layoutX="26.0" layoutY="50.0" prefHeight="18.0" prefWidth="293.0" />
+                        <Label layoutX="14.0" layoutY="56.0" prefHeight="25.0" prefWidth="57.0" text="HorseID" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addHId" layoutX="100.0" layoutY="54.0" prefHeight="30.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="14.0" layoutY="92.0" prefHeight="25.0" prefWidth="86.0" text="HorseName" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addHName" layoutX="100.0" layoutY="90.0" prefHeight="30.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="14.0" layoutY="128.0" prefHeight="30.0" prefWidth="86.0" text="JockeyName" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addJName" layoutX="100.0" layoutY="128.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="14.0" layoutY="166.0" prefHeight="30.0" prefWidth="86.0" text="Age" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addJAge" layoutX="100.0" layoutY="166.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="319.0" layoutY="53.0" prefHeight="30.0" prefWidth="57.0" text="Breed" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addBreed" layoutX="462.0" layoutY="53.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="319.0" layoutY="92.0" prefHeight="25.0" prefWidth="148.0" text="RaceRecord(Total, Win)" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addRecord" layoutX="462.0" layoutY="89.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="319.0" layoutY="129.0" prefHeight="30.0" prefWidth="57.0" text="Group" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="319.0" layoutY="167.0" prefHeight="30.0" prefWidth="57.0" text="Picture" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addGroup" layoutX="462.0" layoutY="129.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="AddSubmitBtn1" layoutX="543.0" layoutY="198.0" mnemonicParsing="false" onAction="#AddHorse" prefHeight="25.0" prefWidth="86.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text="Add" textFill="#000437">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="addMsgLabel" layoutX="14.0" layoutY="204.0" prefHeight="19.0" prefWidth="428.0" textFill="#ddc330" />
+                        <Button layoutX="462.0" layoutY="170.0" mnemonicParsing="false" onAction="#selectImage" text="Image" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="-3.0" prefHeight="48.0" prefWidth="692.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                     <children>
+                        <Label layoutX="50.0" layoutY="9.0" prefHeight="31.0" prefWidth="388.0" text="Add Horse Details" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="addBackBtn" layoutY="6.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="36.0" prefWidth="44.0" styleClass="backBtn" stylesheets="@GUIcss.css">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+                    </children>
+                </Pane>
+                <Pane fx:id="menuPane" prefHeight="594.0" prefWidth="697.0" style="-fx-background-color: #001E4E;">
+                    <children>
+                        <GridPane layoutX="119.0" layoutY="74.0" prefHeight="462.0" prefWidth="461.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="241.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="220.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="173.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="174.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="174.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="manageBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="138.0" prefWidth="220.0" stylesheets="@GUIcss.css" text="Horse Management" textFill="#110543">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets />
+                                    </GridPane.margin>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                    <graphic>
+                                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@management.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="winningHorsesBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="138.0" prefWidth="220.0" stylesheets="@GUIcss.css" text="Winning Horse Details" textFill="#110543" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                    <graphic>
+                                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@winning details.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="horseDetailsTableBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="138.0" prefWidth="220.0" stylesheets="@GUIcss.css" text="Viewing Horse details Table" textFill="#110543" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                    <graphic>
+                                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@detail table.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="majorRoundBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="138.0" prefWidth="220.0" stylesheets="@GUIcss.css" text="Simulating the Major Round" textFill="#110543" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                    <graphic>
+                                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@random horses.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="saveDataBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="138.0" prefWidth="220.0" stylesheets="@GUIcss.css" text="Save Data" textFill="#110543" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                    <graphic>
+                                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@save.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="VisualizingBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="138.0" prefWidth="220.0" stylesheets="@GUIcss.css" text="Visualizing Winning Horses" textFill="#110543" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                    <graphic>
+                                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@winning horses.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </GridPane>
+                    </children>
+                </Pane>
+                <Pane fx:id="VisualizingPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="8.0" prefHeight="156.0" prefWidth="676.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Label fx:id="VisualizingMsgLabel" layoutX="31.0" layoutY="49.0" prefHeight="25.0" prefWidth="271.0" />
+                        <Text fill="#d5b81b" layoutX="54.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The winning horses are visualized with a graph according to their time" wrappingWidth="568.5366821289062">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Text>
+                            </children></Pane>
+                        <Pane prefHeight="48.0" prefWidth="691.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                     <children>
+                        <Text fill="#d5b81b" layoutX="62.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualizing Winning Horses" wrappingWidth="270.9999999999999">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children></Pane>
+                  <BarChart fx:id="visualizeChart" layoutX="6.0" layoutY="184.0" prefHeight="385.0" prefWidth="673.0">
+                    <xAxis>
+                      <CategoryAxis prefHeight="38.0" prefWidth="466.0" side="BOTTOM" tickLabelFill="WHITE" tickLabelRotation="90.0" fx:id="xAxis">
+                           <tickLabelFont>
+                              <Font size="23.0" />
+                           </tickLabelFont></CategoryAxis>
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" side="LEFT" tickLabelFill="WHITE" />
+                    </yAxis>
+                  </BarChart>
+                  <Text fill="#d5b81b" layoutX="284.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Taken" wrappingWidth="139.7366943359375">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                    </children></Pane>
+                <Pane fx:id="raceTablePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="11.0" prefHeight="130.0" prefWidth="673.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Button fx:id="sortByDateBtn" layoutX="481.0" layoutY="85.0" mnemonicParsing="false" onAction="#vrl" prefHeight="20.0" prefWidth="177.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text="Sort By HorseID" />
+                                <Label fx:id="vrlMsgLabel" layoutX="40.0" layoutY="48.0" prefHeight="17.0" prefWidth="271.0" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="48.0" prefWidth="691.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                     <children>
+                        <Text fill="#d5b81b" layoutX="46.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewing Horse Details" wrappingWidth="242.99999999999994">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children></Pane>
+                        <TableView fx:id="BreedSortTable" layoutX="17.0" layoutY="165.0" prefHeight="416.0" prefWidth="657.0">
+                            <columns>
+                                <TableColumn fx:id="IDSortHorseIDCol" minWidth="0.0" prefWidth="59.20001220703125" text="HorseID" />
+                                <TableColumn fx:id="IDSortHNameCol" prefWidth="126.4000244140625" text="HorseName" />
+                                <TableColumn fx:id="IDSortJNameCol" prefWidth="120.0" text="JockeyName" />
+                                <TableColumn fx:id="IDSortAgeCol" prefWidth="37.60003662109375" text="Age" />
+                        <TableColumn fx:id="IDSortBreedCol" prefWidth="90.39996337890625" text="Breed" />
+                        <TableColumn fx:id="IDSortRaceRecordCol" prefWidth="93.5999755859375" text="RaceRecord" />
+                        <TableColumn fx:id="IDSortGroupCol" prefWidth="47.199951171875" text="Group" />
+                        <TableColumn fx:id="IDSortHorsePicCol" prefWidth="81.5999755859375" text="HorsePicture" />
+                            </columns>
+                        </TableView>
+                    </children></Pane>
+                <Pane fx:id="managePane" prefHeight="577.0" prefWidth="698.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <TableView fx:id="manageTable" layoutX="14.0" layoutY="244.0" prefHeight="325.0" prefWidth="667.0">
+                            <columns>
+                                <TableColumn fx:id="manageHIDcol" prefWidth="63.20001220703125" text="HorseID" />
+                                <TableColumn fx:id="manageHNameCol" prefWidth="124.0" text="HorseName" />
+                                <TableColumn fx:id="manageJNameCol" prefWidth="108.79998779296875" text="JockeyName" />
+                                <TableColumn fx:id="manageAgeCol" prefWidth="63.20001220703125" text="Age" />
+                                <TableColumn fx:id="manageBreedCol" prefWidth="85.60003662109375" text="Breed" />
+                                <TableColumn fx:id="manageRaceRecordCol" prefWidth="91.20001220703125" text="RaceRecord" />
+                                <TableColumn fx:id="manageGroupCol" prefWidth="43.9998779296875" text="Group" />
+                                <TableColumn fx:id="managePicCol" prefWidth="91.2000732421875" text="HorsePicture" />
+                            </columns>
+                        </TableView>
+                        <Pane layoutX="6.0" layoutY="-2.0" prefHeight="236.0" prefWidth="676.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <GridPane layoutX="57.0" layoutY="90.0" prefHeight="108.0" prefWidth="596.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="198.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="200.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="187.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Button fx:id="addBtn" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="212.0" prefWidth="188.0" stylesheets="@GUIcss.css" text="Add Horse Details" textFill="#0a368d">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="28.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="updateBtn" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="212.0" prefWidth="195.0" stylesheets="@GUIcss.css" text="Update Horse Details" textFill="#0a368d" GridPane.columnIndex="1">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="28.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@update.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="deleteBtn" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="212.0" prefWidth="188.0" stylesheets="@GUIcss.css" text="Delete Horse Details" textFill="#0a368d" GridPane.columnIndex="2">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="28.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@delete.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </GridPane>
+                                <Pane layoutX="-7.0" prefHeight="48.0" prefWidth="691.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                                    <children>
+                                        <Label layoutX="27.0" layoutY="11.0" text="Horse Management" textFill="#d5b81b">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+                <Pane fx:id="standingPane" prefHeight="526.0" prefWidth="634.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="8.0" prefHeight="138.0" prefWidth="676.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Button fx:id="WinningHorseSortBtn" layoutX="494.0" layoutY="75.0" mnemonicParsing="false" onAction="#WinningHorseTable" prefHeight="35.0" prefWidth="148.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text=" Sort with Place">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <Label fx:id="standingMsgLabel" layoutX="63.0" layoutY="52.0" prefHeight="27.0" prefWidth="251.0" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="48.0" prefWidth="691.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Label layoutX="20.0" layoutY="8.0" prefHeight="30.0" prefWidth="285.0" text="Winning Horses" textFill="#d5b81b">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <TableView fx:id="standingTable" layoutX="21.0" layoutY="159.0" prefHeight="421.0" prefWidth="655.0">
+                            <columns>
+                                <TableColumn fx:id="PlaceSortPlaceCol" prefWidth="62.39996337890625" text="Place" />
+                                <TableColumn fx:id="PlaceSortHorseIDCol" prefWidth="96.79998779296875" text="HorseID" />
+                                <TableColumn fx:id="PlaceSortHNameCol" prefWidth="182.39996337890625" text="HorseName" />
+                                <TableColumn fx:id="PlaceSortGroupCol" prefWidth="94.4000244140625" text="Group" />
+                                <TableColumn fx:id="PlaceSortHorsePicCol" prefWidth="116.0001220703125" text="HorsePicture" />
+                        <TableColumn fx:id="PlaceSortTimeCol" prefWidth="101.599853515625" text="Time" />
+                            </columns>
+                        </TableView>
+                    </children></Pane>
+                <Pane fx:id="deleteDetailsPane" prefHeight="417.0" prefWidth="698.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="9.0" layoutY="-1.0" prefHeight="147.0" prefWidth="676.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Pane layoutX="-11.0" prefHeight="48.0" prefWidth="691.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                                    <children>
+                                        <Label layoutX="56.0" layoutY="11.0" prefHeight="27.0" prefWidth="229.0" text="Delete Horse Details" textFill="#d5b81b">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="deleteBack" layoutX="10.0" layoutY="6.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="36.0" prefWidth="44.0" styleClass="backBtn" stylesheets="@GUIcss.css" />
+                                          <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="20.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@back.png" />
+                                              </image>
+                                          </ImageView>
+                                    </children>
+                                </Pane>
+                                <Button fx:id="deleteSubmitBtn" layoutX="540.0" layoutY="86.0" mnemonicParsing="false" onAction="#deleteHorse" prefHeight="31.0" prefWidth="79.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text="Delete" textFill="#4521e4">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Button>
+                                <Label fx:id="deleteMsgLabel" layoutX="14.0" layoutY="48.0" prefHeight="25.0" prefWidth="307.0" />
+                        <Label layoutX="20.0" layoutY="52.0" styleClass="managePane" text="Horse ID" textFill="#d5b81b" />
+                        <TextField fx:id="dltID" layoutX="93.0" layoutY="48.0" />
+                        <Button fx:id="dltSearchBtn" layoutX="283.0" layoutY="48.0" mnemonicParsing="false" onAction="#onDltSearch" text="Seach" />
+                            </children>
+                        </Pane>
+                        <TableView fx:id="deleteTable" layoutX="17.0" layoutY="216.0" prefHeight="368.0" prefWidth="661.0">
+                            <columns>
+                                <TableColumn fx:id="deleteHorseIDCol" prefWidth="65.60003662109375" text="HorseID" />
+                                <TableColumn fx:id="deleteHNameCol" prefWidth="112.0" text="HorseName" />
+                                <TableColumn fx:id="deleteJNameCol" minWidth="1.5999755859375" prefWidth="108.79998779296875" text="JockeyName" />
+                                <TableColumn fx:id="deleteAgeCol" prefWidth="53.60003662109375" text="Age" />
+                                <TableColumn fx:id="deleteBreedCol" prefWidth="84.0" text="Breed" />
+                                <TableColumn fx:id="deleteRaceRecordCol" minWidth="0.0" prefWidth="93.60003662109375" text="RaceRecord" />
+                                <TableColumn fx:id="deleteGroupCol" prefWidth="43.199951171875" text="Group" />
+                                <TableColumn fx:id="deleteHorsePicCol" prefWidth="101.5999755859375" text="HorsePicture" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </Pane>
+                <Pane fx:id="randomRacepane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="9.0" layoutY="1.0" prefHeight="138.0" prefWidth="675.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Button fx:id="simulateRaceBtn" layoutX="480.0" layoutY="82.0" mnemonicParsing="false" onAction="#simulateRandomRace" prefHeight="31.0" prefWidth="167.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text="Selecting for Major Round" />
+                                <Label fx:id="randomRaceMsgLabel" layoutX="46.0" layoutY="51.0" prefHeight="25.0" prefWidth="313.0" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="48.0" prefWidth="692.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Label layoutX="14.0" layoutY="11.0" prefHeight="27.0" prefWidth="254.0" text="Selecting for Major Round" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <TableView fx:id="majorRoundTable" layoutX="19.0" layoutY="173.0" prefHeight="410.0" prefWidth="658.0">
+                            <columns>
+                                <TableColumn fx:id="MajorHorseIDCol" prefWidth="127.20001220703125" text="HorseID" />
+                                <TableColumn fx:id="MajorHNameCol" minWidth="0.0" prefWidth="252.0" text="HorseName" />
+                                <TableColumn fx:id="MajorGroupCol" prefWidth="111.20001220703125" text="Group" />
+                                <TableColumn fx:id="MajorHorsePicCol" prefWidth="167.199951171875" text="HorsePicture" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </Pane>
+                <Pane fx:id="saveDataPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="7.0" prefHeight="360.0" prefWidth="676.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Button fx:id="saveChooseBtn" layoutX="213.0" layoutY="215.0" mnemonicParsing="false" onAction="#saveDataToFile" prefHeight="48.0" prefWidth="251.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text="Save Current Data to a text file">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Button>
+                                <Label fx:id="saveDataMsgLabel" layoutX="32.0" layoutY="49.0" prefHeight="25.0" prefWidth="307.0" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="48.0" prefWidth="692.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Label layoutX="23.0" layoutY="11.0" prefHeight="25.0" prefWidth="323.0" text="Save Current Data" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                    </children></Pane>
+                <Pane fx:id="updateDetailsPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #003366;">
+                    <children>
+                        <Pane layoutX="14.0" layoutY="-3.0" prefHeight="236.0" prefWidth="667.0" styleClass="managePane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Label fx:id="updateMsgLabel" layoutX="14.0" layoutY="204.0" prefHeight="19.0" prefWidth="380.0" />
+                                <Label layoutX="14.0" layoutY="56.0" prefHeight="25.0" prefWidth="57.0" text="HorseID" textFill="#d5b81b">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                              <TextField fx:id="updateHId" layoutX="100.0" layoutY="54.0" prefHeight="30.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </TextField>
+                              <Label layoutX="14.0" layoutY="92.0" prefHeight="25.0" prefWidth="86.0" text="HorseName" textFill="#d5b81b">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </Label>
+                              <TextField fx:id="updateHName" layoutX="100.0" layoutY="90.0" prefHeight="30.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </TextField>
+                              <Label layoutX="14.0" layoutY="128.0" prefHeight="30.0" prefWidth="86.0" text="JockeyName" textFill="#d5b81b">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </Label>
+                              <TextField fx:id="updateJName" layoutX="100.0" layoutY="128.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </TextField>
+                        <Label layoutX="14.0" layoutY="166.0" prefHeight="30.0" prefWidth="86.0" text="Age" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="updateJAge" layoutX="100.0" layoutY="166.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                              <Label layoutX="319.0" layoutY="53.0" prefHeight="30.0" prefWidth="57.0" text="Breed" textFill="#d5b81b">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </Label>
+                              <TextField fx:id="updateBreed" layoutX="462.0" layoutY="53.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </TextField>
+                              <Label layoutX="319.0" layoutY="92.0" prefHeight="25.0" prefWidth="148.0" text="RaceRecord(Total, Win)" textFill="#d5b81b">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </Label>
+                              <TextField fx:id="updateRecord" layoutX="462.0" layoutY="89.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </TextField>
+                        <Label layoutX="319.0" layoutY="129.0" prefHeight="30.0" prefWidth="57.0" text="Group" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="319.0" layoutY="167.0" prefHeight="30.0" prefWidth="57.0" text="Picture" textFill="#d5b81b">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="updateGroup" layoutX="462.0" layoutY="129.0" prefHeight="31.0" prefWidth="167.0" styleClass="manageInput" stylesheets="@GUIcss.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                              <Button fx:id="updateSubmitBtn" layoutX="543.0" layoutY="198.0" mnemonicParsing="false" onAction="#updateHorse" prefHeight="25.0" prefWidth="86.0" styleClass="manageSubmit" stylesheets="@GUIcss.css" text="Update" textFill="#000437">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Button>
+                        <Button layoutX="462.0" layoutY="169.0" mnemonicParsing="false" onAction="#selectImage2" text="Image" />
+                            </children></Pane>
+                        <TableView fx:id="updateTable" layoutX="20.0" layoutY="254.0" onMouseClicked="#updateView" prefHeight="333.0" prefWidth="655.0">
+                            <columns>
+                                <TableColumn fx:id="updateHIDCol" prefWidth="64.0" text="HorseID" />
+                                <TableColumn fx:id="updateHNameCol" prefWidth="145.60003662109375" text="HorseName" />
+                                <TableColumn fx:id="updateJNameCol" prefWidth="116.79998779296875" text="JockeyName" />
+                                <TableColumn fx:id="updateAgeCol" prefWidth="43.20001220703125" text="Age" />
+                                <TableColumn fx:id="updateBreedCol" prefWidth="62.4000244140625" text="Breed" />
+                                <TableColumn fx:id="updateRaceRecordCol" minWidth="0.0" prefWidth="88.800048828125" text="RaceRecord" />
+                                <TableColumn fx:id="updateGroupCol" prefWidth="43.199951171875" text="Group" />
+                                <TableColumn fx:id="updatePicCol" prefWidth="93.5999755859375" text="HorsePicture" />
+                            </columns>
+                        </TableView>
+                        <Pane layoutX="-1.0" prefHeight="48.0" prefWidth="692.0" styleClass="topicPane" stylesheets="@GUIcss.css">
+                            <children>
+                                <Label layoutX="51.0" layoutY="10.0" prefHeight="31.0" prefWidth="388.0" text="Update Horse Details" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="updateBackBtn" layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#Clicks" prefHeight="36.0" prefWidth="44.0" styleClass="backBtn" stylesheets="@GUIcss.css">
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@back.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

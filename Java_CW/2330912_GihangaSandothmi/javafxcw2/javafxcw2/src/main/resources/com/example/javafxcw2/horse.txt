@@ -1,0 +1,4 @@
+568,fd,10,dsf,C,20,fs,javafx.scene.image.Image@244b7e80
+1,sf,20,g,A,100,fs,javafx.scene.image.Image@ce20f06
+364,fd,21,hfh,B,12,dg,javafx.scene.image.Image@728794dd
+645,gf,14,dg,D,1,hf,javafx.scene.image.Image@7a3d6a8a

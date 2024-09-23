@@ -1,0 +1,64 @@
+.button{
+    -fx-text-fill: #D5B81B;
+    -fx-background-color: #000437;
+}
+
+.button:hover {
+    -fx-background-color: #000220;
+}
+
+.button:pressed {
+    -fx-background-color: #000437;
+}
+
+.buttonExit {
+    -fx-text-fill: #D5B81B;
+    -fx-background-color:  #000437;
+}
+
+.buttonExit:hover {
+    -fx-background-color: #000220;
+}
+
+.buttonMenu {
+    -fx-background-color: #000437;
+}
+
+.buttonMenu:hover {
+    -fx-background-color:#000220;
+}
+
+.manageInput {
+    -fx-background-color: #e9d8f2;
+}
+
+.manageInput:hover {
+    -fx-background-color: #bfbff0;
+}
+
+.manageSubmit {
+    -fx-text-fill: #D5B81B;
+    -fx-background-color: #000437;
+    -fx-font-weight: 800;
+}
+
+.manageSubmit:hover {
+    -fx-background-color:  #000437;
+}
+
+.managePane{
+    -fx-background-color: #001E4E;
+    -fx-background-radius: 20;
+}
+
+.topicPane {
+    -fx-background-color:  #000437;
+}
+.backBtn{
+    -fx-background-color:  #001E4E;
+}
+
+.backBtn:hover{
+    -fx-background-color:  #002200;
+}
+
